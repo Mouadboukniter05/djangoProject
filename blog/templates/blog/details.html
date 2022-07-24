@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <title>OPENDOCKER</title>
+  </head>
+  <body style="background-color:#D7E1EA">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">OPENDOCKER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="http://192.168.1.105:8000/">ALL VMs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://192.168.1.105:8000/add">Create VM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="http://192.168.1.105:8000/details">Details</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br/>
+<br/>
+    <h1 style="width:85%;margin-left:35px">Details</h1>
+    
+    <div class="container">
+      <div class="card mb-3" style="max-width: 800px;">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Our host contains :</h5>
+              
+              <p class="card-text"> <strong>Model</strong>: {{ nodeinfo.0 }}</p>
+              <p class="card-text"> <strong>Memory size</strong>: {{ nodeinfo.1 }}</p>
+              <p class="card-text"> <strong>Number of CPUs</strong>: {{ nodeinfo.2 }}</p>
+              <p class="card-text"> <strong>Number of possible vCPUs via KVM hypervisor</strong>: {{ vcpus }}</p>
+              <p class="card-text"> <strong>MHz of CPUs</strong>: {{ nodeinfo.3 }}</p>
+              <p class="card-text"> <strong>Number of CPU threads per core</strong>: {{ nodeinfo.7 }}</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+      
+  
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
